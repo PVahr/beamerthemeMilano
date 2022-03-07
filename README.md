@@ -9,7 +9,6 @@ Find out more in the detailed example.
 Based on the beamer theme "Verona", it uses the awesome "Fira" font family (used by Firefox too).
 Due to the font family used, it **does not compile under pdfLaTeX**.
 It compiles under **LuaLaTeX only**. This makes no practical difference to my experience.
-To compile with LuaLaTeX, just change the compiler of the editor you are using.
 
 Does this theme has options?
 Not at all! But for intelligent reasons.
