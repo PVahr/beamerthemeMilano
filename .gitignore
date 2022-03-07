@@ -14,3 +14,5 @@
 *.eps
 *.ps
 *-converted-to.*
+
+!./MWE/img/univ_logo.pdf
