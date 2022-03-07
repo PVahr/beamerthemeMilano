@@ -1,59 +1,28 @@
-% Copyright (C) 2021 by Pietro Vahramian
-% <email here>
+% Copyright (C) 2021 by P. Vahr. 
+% 
+% contact me via GItHub if needed
 % -------------------------------------------------------
-% 
-% This work may be distributed and/or modified under the
-% conditions of the LaTeX Project Public License, either version 1.3
-% of this license or (at your option) any later version.
-% The latest version of this license is in
-%   http://www.latex-project.org/lppl.txt
-% and version 1.3 or later is part of all distributions of LaTeX
-% version 2005/12/01 or later.
-% 
-%  Author: Pietro Vahramian
-%          email
-% 
-%  This work has the LPPL maintenance status "author-maintained".
+%  under GNU General Public License v3.0 
 
 % This theme is based on:
-% 		- Verona theme, Copyright (C) 2015 by Ivan Valbusa ADD LINK 
-%		- Metropolis theme ADD LINK
+% 		- Verona theme, Copyright (C) 2015 by Ivan Valbusa 
+%		- Metropolis theme for the Font family.
 
 
 
-%default frame size is 128 mm by 96 mm, 4*3 aspect ratio
-\NeedsTeXFormat{LaTeX2e}[2005/12/01]
-\ProvidesPackage{beamerthemeMilano}[20/05/2021 v.0.1 Themes for the Beamer class]
+
+
+\ProvidesPackage{beamerthemeMilano}[2022  v.0.1 Themes for the Beamer class]
 
 \mode<presentation>
-\newif\ifbeamer@showheader
-\newif\ifbeamer@red
-\newif\ifbeamer@gray
-\newif\ifbeamer@colorblocks
-\newif\ifbeamer@graytitle
-\newif\ifbeamer@sidebar
-\newif\ifbeamer@noframetitlerule
-\beamer@showheaderfalse
-\beamer@redfalse
-\beamer@grayfalse
-\beamer@colorblocksfalse
-\beamer@graytitlefalse
-\beamer@sidebarfalse
-\beamer@noframetitlerulefalse
-\DeclareOptionBeamer{showheader}{\beamer@showheadertrue}
-\DeclareOptionBeamer{red}{\beamer@redtrue}
-\DeclareOptionBeamer{gray}{\beamer@graytrue}
-\DeclareOptionBeamer{colorblocks}{\beamer@colorblockstrue}
-\DeclareOptionBeamer{graytitle}{\beamer@graytitletrue}
-\DeclareOptionBeamer{sidebar}{\beamer@sidebartrue}
-\DeclareOptionBeamer{noframetitlerule}{\beamer@noframetitleruletrue}
-\ProcessOptionsBeamer
 
-% Packages
+
+% Packages TODO CHECK IT LATER ON
 \RequirePackage{tikz}
 \RequirePackage{tcolorbox}
   \tcbuselibrary{skins}
 \RequirePackage{fontspec}
+
 % ******************
 % colortheme -- all colors are defined here as RGB triplets (/256)
 % ******************
@@ -61,10 +30,13 @@
 \definecolor{Milanogreen}    {RGB}{0,152,0}
 \definecolor{Milanoblue}     {RGB}{0,51,102}
 \definecolor{Milanoorange}   {RGB}{238,118,0}
-\definecolor{Milanored}      {RGB}{255,104,3}
+\definecolor{Milanored}      {RGB}{246,29,29}
 \definecolor{Milanogray}     {RGB}{97,97,102} % reference gray
 \definecolor{Milanograyblue} {RGB}{0,128,128}
 \definecolor{Milanograygreen}{RGB}{128,128,0}
+\definecolor{MilanoProBackground}{RGB}{250,250,250}
+\definecolor{MilanoProBackground}{RGB}{240,240,240}
+
 \setbeamercolor*{frametitle}{fg=Milanogray}
 \setbeamercolor*{framesubtitle}{fg=Milanogray!50!white} % trick to make it lighter
 
@@ -84,6 +56,7 @@
 \setbeamercolor*{date}{fg=Milanogray!80!white}
 
 \setbeamercolor*{page number in head/foot}{fg=Milanored!80!black}
+\setbeamercolor{background canvas}{bg=MilanoProBackground}
 % blocks
 %\setbeamercolor{block title}{use=structure,fg=structure.fg,bg=structure.fg!10!bg}
 %\setbeamercolor{block title alerted}{use=alerted text,fg=alerted text.fg,bg=alerted text.fg!10!bg}
@@ -105,14 +78,10 @@
  	{Fira Sans Light}
 \setmonofont[BoldFont={Fira Mono Medium}]{Fira Mono}
 
-\AtBeginEnvironment{tabular}{% %%?? the egg is this?
-	\addfontfeature{Numbers={Monospaced}}%
-}
-
 \setbeamerfont{frametitle}{size=\Large,series=\bfseries} %Title and subtitles of frames
 \setbeamerfont{framesubtitle}{size=\large, series=\mdseries}
 \setbeamerfont{page number in head/foot}{size=\scriptsize, series=\mdseries} %footnote number
-
+\setbeamerfont{normal text}{size=\normalsize}
 \setbeamerfont{block title}{size=\normalsize, series=\bfseries}
 \setbeamerfont{block title alerted}{size=\normalsize, series=\bfseries}
 
@@ -124,17 +93,20 @@
 % ******************
 % innertheme
 % ******************
-\setbeamertemplate{itemize item}[square]
+\setbeamertemplate{itemize item}[square] % style of bullet itemz
 \setbeamertemplate{itemize subitem}[square]
 \setbeamertemplate{blocks}[rounded][shadow=false]
 %\setbeamercolor{quotation}{bg=black!5}
+
 \setbeamertemplate{quotation begin}
 {\begin{tcolorbox}[blanker,borderline west={3pt}{-2pt}{Milanored!30!white},
 before skip=\baselineskip,
 after skip=\baselineskip
 ]}
+
 \setbeamertemplate{quotation end}
 {\end{tcolorbox}%
+
 \ifx\autorecitazione\@empty\else\vskip-1ex
 \hfill\footnotesize(\autorecitazione)\fi
 %{\scriptsize\tikz[overlay]\node[fill=white] at ([yshift=1.5em,xshift=-1cm]interior.south east){\autorecitazione};}
@@ -170,31 +142,6 @@ after skip=\baselineskip
 	\oldtitlegraphic{\node[inner sep=0pt,anchor=north west,#3] at (titlepage) {\includegraphics[#1]{#2}}}}
 
 
-% ---------------------
-% The default variant
-% ---------------------
-
-% headline --  section and subsection -- to be remvoed
-\ifbeamer@showheader
-\setbeamertemplate{headline}
-{%
-  \leavevmode%returns to horizontal mode
-  \hbox{%
-  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.65ex,dp=1.5ex,right]{section in head/foot}%
-    \usebeamerfont{section in head/foot}\insertsectionhead\hspace*{2ex}
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.65ex,dp=1.5ex,left]{subsection in head/foot}%
-    \usebeamerfont{subsection in head/foot}\hspace*{2ex}\insertsubsectionhead
-  \end{beamercolorbox}}%
-  \vskip0pt%
-\begin{tikzpicture}[overlay]
-\draw[draw=\structureA] (0,0) -- (6.3cm,0) -- (6.3cm,1mm);
-\draw[draw=\structureA] (6.5,1mm) -- (6.5,0) -- (12.7cm,0);
-\draw[fill=\structureA,draw=\structureA,yshift=-.5mm] (0,0) rectangle ++ (1mm,1mm);
-\draw[fill=\structureA,draw=\structureA,yshift=-.5mm] (12.69cm,0) rectangle ++ (1mm,1mm);
-\end{tikzpicture}
-}
-\fi
 
 % ******************
 % footline
@@ -352,11 +299,6 @@ after skip=\baselineskip
 \end{tikzpicture}
 }
 
-% ******************************************************
-% ******************************************************
-
-%\def\beamer@fteright{\vskip0.35cm\advance\leftskip by 1.7cm\advance\rightskip by1.7cm} ??
-
 % ******************
 % new commands
 % ******************
@@ -365,43 +307,37 @@ after skip=\baselineskip
 \titlepage
 \end{frame}}
 
-\newcommand{\mail}[1]{\def\@mail{#1}}
-\mail{}
-\newcommand\datelecture{\@dblarg\beamer@datelecture}
-\long\def\beamer@datelecture[#1]#2#3#4{
-  \beamer@savemode
-  \mode<all>
-  \refstepcounter{lecture}\date{#2}
-  \def\beamer@currentlecturelabel{#4}
-  \@onelevel@sanitize\beamer@currentlecturelabel
-  \def\beamer@lecturename{#3}
-  \def\beamer@shortlecturename{#1}
-  \ifx\beamer@onlylecture\@empty
-  \else
-    \expandafter\beamer@if@in@clist@TF\expandafter\beamer@onlylecture
-      \expandafter{\beamer@currentlecturelabel}%
-      {\beamer@inlecturetrue}
-      {\beamer@inlecturefalse}
-  \fi
-  \beamer@atbeginlecture
-  \beamer@resumemode
+% useful for reference a paper at the bottom of slide
+% usage \reference{Paper 1 \hfill Paper 2}
+\newcommand{\reference}[1]{
+	\vfill 
+	{\tiny
+		\textcolor{lightgray!30!black}{
+			{#1\\}}
+	}\par
 }
 
-\AtBeginLecture{%
-\begin{frame}[plain]
-\begin{center}
-	\begin{tcolorbox}[blanker,borderline horizontal={3pt}{20pt}{structure.fg}]
-	  \centering\color{structure.fg}\bfseries \lecturename~\thelecture.\quad \insertlecture\\
-	\end{tcolorbox}
-\end{center}
-\end{frame}
+% split page exaclty in two without leaving extra space ("onlytextwidth")
+\newcommand{\bisplit}[2]{ 
+	%	\vspace{-15pt}
+	\begin{columns}[onlytextwidth]
+		\column[t]{0.5\textwidth}
+		{#1}
+		\column[t]{0.5\textwidth}
+		{#2}
+	\end{columns}
 }
 
-\mode
+% usefull V and X ticks, but they do not belong to the theme. Use them in the main .tex file
+% \newcommand{\success}{ \textcolor{Milanogreen}{\checkmark} }
+% \newcommand{\fail}{ \textcolor{Milanored}{\ding{55}~~}}
+
+
+\mode  % don't delete
 <all>
 
 \endinput
 %%
-%% End of file `beamerthemeVerona.sty'.
+%% End of file `beamerthemeMilano.sty'.
 
 
