@@ -3,7 +3,7 @@ Milano, an effective and modern beamer theme designed to deliver outstanding (sc
 Heavily insipired by the great material provided by Jean-luc Doumont, that you can find at [https://principiae.be](https://principiae.be/X0303.php), including his awesome book "Tree, maps, theorem".
 
 Based on the beamer theme "Verona", its uses the awesome "Fira" font family (used by Firefox too).
-Due to the font family used, it **does not compiles under pdfLaTeX**.
+Due to the font family used, it **does not compile under pdfLaTeX**.
 It compiles under **LuaLaTeX only**. This makes no practical difference to my experience.
 To compile with LuaLaTeX, just change the compiler of the editor you are using.
 
