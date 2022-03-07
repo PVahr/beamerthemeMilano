@@ -29,4 +29,4 @@ Compile and enjoy.
 - MIexample: my example, a structured and detail walk-trhough in the ideas of this theme.
 
 
-### WORK IN PROGRESS, PASS BY AT THE END OF THE SEMESTER
+# WORK IN PROGRESS, PASS BY AT THE END OF THE SEMESTER
