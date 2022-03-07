@@ -1,5 +1,5 @@
 ## Milano, a beamer theme designed to deliver outstanding (scientific) talks.
-Heavily insipired by the great material and ideas provided by Jean-luc Doumont, that you can find at [https://principiae.be](https://principiae.be/X0303.php), this theme originates from the lack of a theme following *strictly* the philosopy and guidelines of Jean-luc Doumont.
+Heavily insipired by the great material and ideas provided by Jean-luc Doumont ([https://principiae.be](https://principiae.be/X0303.php)) this theme originates from the lack of a theme following *strictly* the philosopy and guidelines of Jean-luc Doumont.
 It combines the popularity of beamer with the best suggestions around, in a theme that will bring your talk to stand out for its clarity, design and professionality.
 Invest in your talk: use this theme and understand the ideas behind it to enhance your presentations and stand out of the crowd.
 Designed from scientists for scientists, every design choice can be easily understood and sustained by a scientific-method approach to design and formatting.
