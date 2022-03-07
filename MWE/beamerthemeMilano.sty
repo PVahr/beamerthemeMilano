@@ -1,0 +1,407 @@
+% Copyright (C) 2021 by Pietro Vahramian
+% <email here>
+% -------------------------------------------------------
+% 
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+% 
+%  Author: Pietro Vahramian
+%          email
+% 
+%  This work has the LPPL maintenance status "author-maintained".
+
+% This theme is based on:
+% 		- Verona theme, Copyright (C) 2015 by Ivan Valbusa ADD LINK 
+%		- Metropolis theme ADD LINK
+
+
+
+%default frame size is 128 mm by 96 mm, 4*3 aspect ratio
+\NeedsTeXFormat{LaTeX2e}[2005/12/01]
+\ProvidesPackage{beamerthemeMilano}[20/05/2021 v.0.1 Themes for the Beamer class]
+
+\mode<presentation>
+\newif\ifbeamer@showheader
+\newif\ifbeamer@red
+\newif\ifbeamer@gray
+\newif\ifbeamer@colorblocks
+\newif\ifbeamer@graytitle
+\newif\ifbeamer@sidebar
+\newif\ifbeamer@noframetitlerule
+\beamer@showheaderfalse
+\beamer@redfalse
+\beamer@grayfalse
+\beamer@colorblocksfalse
+\beamer@graytitlefalse
+\beamer@sidebarfalse
+\beamer@noframetitlerulefalse
+\DeclareOptionBeamer{showheader}{\beamer@showheadertrue}
+\DeclareOptionBeamer{red}{\beamer@redtrue}
+\DeclareOptionBeamer{gray}{\beamer@graytrue}
+\DeclareOptionBeamer{colorblocks}{\beamer@colorblockstrue}
+\DeclareOptionBeamer{graytitle}{\beamer@graytitletrue}
+\DeclareOptionBeamer{sidebar}{\beamer@sidebartrue}
+\DeclareOptionBeamer{noframetitlerule}{\beamer@noframetitleruletrue}
+\ProcessOptionsBeamer
+
+% Packages
+\RequirePackage{tikz}
+\RequirePackage{tcolorbox}
+  \tcbuselibrary{skins}
+\RequirePackage{fontspec}
+% ******************
+% colortheme -- all colors are defined here as RGB triplets (/256)
+% ******************
+\definecolor{lightorange}{RGB}{238,118,0} %a different orange
+\definecolor{Milanogreen}    {RGB}{0,152,0}
+\definecolor{Milanoblue}     {RGB}{0,51,102}
+\definecolor{Milanoorange}   {RGB}{238,118,0}
+\definecolor{Milanored}      {RGB}{255,104,3}
+\definecolor{Milanogray}     {RGB}{97,97,102} % reference gray
+\definecolor{Milanograyblue} {RGB}{0,128,128}
+\definecolor{Milanograygreen}{RGB}{128,128,0}
+\setbeamercolor*{frametitle}{fg=Milanogray}
+\setbeamercolor*{framesubtitle}{fg=Milanogray!50!white} % trick to make it lighter
+
+\setbeamercolor{alerted text}{fg=Milanoorange}
+\setbeamercolor{example text}{fg=Milanogreen}
+\setbeamercolor{structure}{fg=Milanoorange}
+
+
+\setbeamercolor*{author in head/foot}{fg=Milanogray,bg=}
+\setbeamercolor*{title in head/foot}{fg=Milanogray,bg=}
+\setbeamercolor*{date in head/foot}{fg=Milanogray!80,bg=}
+\setbeamercolor*{section in head/foot}{fg=Milanogray!80,bg=}
+\setbeamercolor*{subsection in head/foot}{fg=Milanogray!80,bg=}
+\setbeamercolor*{subtitle}{fg=white}
+\setbeamercolor*{title}{fg=white,bg=Milanogray!75}
+\setbeamercolor*{author}{fg=Milanogray!80!black}
+\setbeamercolor*{date}{fg=Milanogray!80!white}
+
+\setbeamercolor*{page number in head/foot}{fg=Milanored!80!black}
+% blocks
+%\setbeamercolor{block title}{use=structure,fg=structure.fg,bg=structure.fg!10!bg}
+%\setbeamercolor{block title alerted}{use=alerted text,fg=alerted text.fg,bg=alerted text.fg!10!bg}
+%\setbeamercolor{block title example}{use=example text,fg=example text.fg,bg=example text.fg!10!bg}
+%
+%\setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg}
+%\setbeamercolor{block body alerted}{parent=normal text,use=block title alerted,bg=block title alerted.bg}
+%\setbeamercolor{block body example}{parent=normal text,use=block title example,bg=block title example.bg}
+
+
+
+% ******************
+% fonttheme
+% ******************
+% These fonts works only with LauLaTeX or XeLaTeX, but they are very nice. If you want to stick to pdflatex, add OT at the end of each font name, like BoldFont={Fira Sans OT}. See the documentation of the metropolis package for more info (texdoc metropolis on terminal). 
+\setsansfont[ItalicFont={Fira Sans Light Italic},
+	BoldFont={Fira Sans},%
+	BoldItalicFont={Fira Sans Italic}]%
+ 	{Fira Sans Light}
+\setmonofont[BoldFont={Fira Mono Medium}]{Fira Mono}
+
+\AtBeginEnvironment{tabular}{% %%?? the egg is this?
+	\addfontfeature{Numbers={Monospaced}}%
+}
+
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries} %Title and subtitles of frames
+\setbeamerfont{framesubtitle}{size=\large, series=\mdseries}
+\setbeamerfont{page number in head/foot}{size=\scriptsize, series=\mdseries} %footnote number
+
+\setbeamerfont{block title}{size=\normalsize, series=\bfseries}
+\setbeamerfont{block title alerted}{size=\normalsize, series=\bfseries}
+
+\setbeamerfont{caption}{size=\small} %?? useless?
+\setbeamerfont{caption name}{series=\bfseries} %?? useless?
+\setbeamerfont{description item}{series=\bfseries} %?? useless?
+
+
+% ******************
+% innertheme
+% ******************
+\setbeamertemplate{itemize item}[square]
+\setbeamertemplate{itemize subitem}[square]
+\setbeamertemplate{blocks}[rounded][shadow=false]
+%\setbeamercolor{quotation}{bg=black!5}
+\setbeamertemplate{quotation begin}
+{\begin{tcolorbox}[blanker,borderline west={3pt}{-2pt}{Milanored!30!white},
+before skip=\baselineskip,
+after skip=\baselineskip
+]}
+\setbeamertemplate{quotation end}
+{\end{tcolorbox}%
+\ifx\autorecitazione\@empty\else\vskip-1ex
+\hfill\footnotesize(\autorecitazione)\fi
+%{\scriptsize\tikz[overlay]\node[fill=white] at ([yshift=1.5em,xshift=-1cm]interior.south east){\autorecitazione};}
+}
+\newenvironment<>{citazione}[1][]
+{\def\autorecitazione{#1}%
+	\actionenv#2%
+	\usebeamertemplate{quotation begin}
+	\usebeamerfont{quotation}%
+	\usebeamercolor{quotation}%
+	\list{}{\listparindent 0em%
+		\itemindent    \listparindent
+		\leftmargin   3pt
+		\rightmargin   0pt
+		\parsep        \z@ \@plus\p@}%
+	\item\relax}
+{\endlist
+	\usebeamertemplate{quotation end}\endactionenv}
+\let\quotation\citazione
+
+
+% ******************************************************
+% outertheme
+% ******************************************************
+\setbeamertemplate{navigation symbols}{} %remove those ugly navigation symbols. Who ever used them?!
+
+\def\structureA{structure.fg!70}
+\def\structureB{structure.fg}
+
+
+\let\oldtitlegraphic\titlegraphic
+\renewcommand{\titlegraphic}[3][]{%
+	\oldtitlegraphic{\node[inner sep=0pt,anchor=north west,#3] at (titlepage) {\includegraphics[#1]{#2}}}}
+
+
+% ---------------------
+% The default variant
+% ---------------------
+
+% headline --  section and subsection -- to be remvoed
+\ifbeamer@showheader
+\setbeamertemplate{headline}
+{%
+  \leavevmode%returns to horizontal mode
+  \hbox{%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.65ex,dp=1.5ex,right]{section in head/foot}%
+    \usebeamerfont{section in head/foot}\insertsectionhead\hspace*{2ex}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.65ex,dp=1.5ex,left]{subsection in head/foot}%
+    \usebeamerfont{subsection in head/foot}\hspace*{2ex}\insertsubsectionhead
+  \end{beamercolorbox}}%
+  \vskip0pt%
+\begin{tikzpicture}[overlay]
+\draw[draw=\structureA] (0,0) -- (6.3cm,0) -- (6.3cm,1mm);
+\draw[draw=\structureA] (6.5,1mm) -- (6.5,0) -- (12.7cm,0);
+\draw[fill=\structureA,draw=\structureA,yshift=-.5mm] (0,0) rectangle ++ (1mm,1mm);
+\draw[fill=\structureA,draw=\structureA,yshift=-.5mm] (12.69cm,0) rectangle ++ (1mm,1mm);
+\end{tikzpicture}
+}
+\fi
+
+% ******************
+% footline
+% ******************
+\def\lectureinfoot{%
+    \ifnum\thelecture=0\else
+    %\textcolor{structure.fg}{$\cdot$\thelecture$\cdot$}
+    \tikz[overlay]\node[yshift=2pt,text=structure.fg] 
+      {\bf$\cdot$\thelecture$\cdot$};
+   \fi}
+
+%\setbeamertemplate{footline}
+%{
+ % \leavevmode%
+  %\hfill\hbox{%
+%  \begin{beamercolorbox}[wd=.3333333\paperwidth,ht=2.25ex,dp=1ex,left]{author in head/foot}%
+%    \usebeamerfont{author in head/foot}\hspace*{1ex}\insertshortauthor\expandafter\beamer@ifempty\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}
+%  \end{beamercolorbox}%
+%  \begin{beamercolorbox}[wd=.3333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+%    \usebeamerfont{title in head/foot}\insertshorttitle
+%  \end{beamercolorbox}%
+%  \begin{beamercolorbox}[wd=.3333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+%    \usebeamerfont{date in head/foot}
+%    \insertshortdate{}\hspace*{2em}
+% \lectureinfoot\quad\insertframenumber~\tikz[overlay]\draw[draw=\structureA] (0,-.5mm) -- (0,1.6mm);
+%	\begin{beamercolorbox}[]
+%		\inserttotalframenumber\hspace*{2mm} 
+%	\end{beamercolorbox}
+%}
+%  \end{beamercolorbox}}%
+%}
+
+
+%Note: footline is messed up when you run the .tex in draft mode. Why?
+%\setbeamertemplate{footline}{%
+%	%\insertsectionnavigationhorizontal{10ex}{}{}	%it's not too ugly, is a decent option  but still is just NOISE
+%	\begin{beamercolorbox}[wd=\paperwidth, dp=1ex, ht=2.5ex, sep=0.3\beamer@leftmargin, right]{footline}%
+%		\usebeamerfont{page number in head/foot}%
+%		\usebeamercolor[fg]{page number in head/foot}
+%		%		\usebeamertemplate*{frame footer}
+%%		\insertframenumber
+%		%		\usebeamertemplate*{frame numbering}
+%	\end{beamercolorbox}%
+%	\vspace{-0.09\beamer@leftmargin} %% incredibily ugly and dirty job, whose goal is to have the number equidistant from bottom and right margin
+%	
+%}
+
+\setbeamertemplate{footline}{
+}
+
+
+
+
+
+% ******************
+% title page
+% ******************
+\setbeamertemplate{title page}
+{
+  \begingroup % it's a TeX's primitive. Like {, but more powerfull. 
+  \begin{tikzpicture}[overlay,remember picture]
+  \draw[fill=Milanogray,draw=none] (current page.north west) rectangle (\paperwidth,-.3cm);
+		\node[xshift=-5cm,yshift=-4.1cm] 
+		 	at (current page.south) (titlepage) {};
+%	  \inserttitlegraphic;
+		\node at (current page.north east) {\includegraphics[width=.3\columnwidth]{./img/l+2}};
+		\draw[line width=4mm,xshift=3pt,draw=structure.fg,yshift=-1mm] 
+		 	(0,0) -- (\paperwidth,0) {};
+\node[anchor=south west,align=left] at (0,.25) {% 
+\parbox{12cm}{%     
+\usebeamerfont{title}\usebeamercolor[fg]{title}\bfseries \inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else\vskip.5ex%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}
+        \insertsubtitle\par}%
+      \fi}};
+\node[anchor=north west,align=left] at (0,-.4) {%
+\parbox{0.35\textwidth}{
+	\vskip5pt
+      {\usebeamerfont{author}\usebeamercolor[fg]{author}\bfseries \insertauthor}
+ %     \usebeamercolor[fg]{date} \usebeamerfont{date} \tiny \@mail
+    \vskip3mm
+      \usebeamerfont{institute}\usebeamercolor[fg]{author}\insertinstitute
+    \vskip6mm
+%      \usebeamercolor[fg]{date}\usebeamerfont{date}\insertdate
+%      \vskip3mm \@mail
+%      {\usebeamerfont{author}\usebeamercolor[fg]{date}\scriptsize\ttfamily\@mail}  
+%	{\usebeamerfont{institute}\alert{Hybrid trap team}}  
+%	{\tiny
+%	{\footnotesize\bfseries\alert{Hybrid trap team}\par}
+%	\vspace{3pt}
+%	\textcolor{lightgray!30!black}{
+%	AA \hfill BB\\
+%	CC \hfill dd\\
+%	EE \hfill FF \\ 
+%	GG 	\hfill HH}\par}
+%	\vskip14.5pt
+	\includegraphics[width=120pt]{./img/univ_logo}
+}}; 
+  \end{tikzpicture}
+  \endgroup
+}
+
+
+
+
+
+
+
+
+% ******************
+% frametitle
+% ******************
+
+% sidebar shrinks to zero.
+% No sidebar intended for this theme. Most of the times it's only graphical noise, reducing signal-to-noise ratio of your presentation
+\setbeamersize{sidebar width left=0cm}  
+\setbeamersize{sidebar width right=0cm}
+\setbeamersize{text margin left = 25pt}
+\setbeamersize{text margin right = 25pt}
+%alternative way, but a bit deprecated:
+%\setlength{\beamer@leftmargin}{25pt}
+%\setlength{\beamer@rightmargin}{25pt}
+
+\newlength{\frametitlesidebar} % USELESS???!!! GET RID OF IT
+\setlength{\frametitlesidebar}{\dimexpr(\paperwidth-\beamer@leftmargin-\beamer@rightmargin)}  %\numexpr, \dimexpr, \glueexpr, \muexpr are other 4 TeX's primitive!!
+\setbeamertemplate{frametitle}
+{
+\vspace{15pt} %looks like in Beamer doesn't exist any vertical margin length. It should be based on the geometry package, yet better not invoke it. The only knwon workaround is to add space in headline and footline. This will not work for frames with the [plain] options and it's pretty dirty. 
+
+% put an unecessary horizontal line at the top
+%\begin{tikzpicture}[overlay]
+%\draw[line width=1pt,draw=structure.fg,yshift=10pt] (0,0) -- (\textwidth,0);%draw=structure.fg takes the foreground color. 
+%yshift shift +(-) upwards (downwards) all the coordinates given.
+%\end{tikzpicture}
+
+%\ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%??
+  
+\begin{beamercolorbox}[sep=0.cm,left,wd=\textwidth]{frametitle}  %%[options]{beamercolor}
+	\usebeamerfont{frametitle}%
+	%\vbox{}\vskip-1ex %?? mystery here!
+    \strut\insertframetitle\strut\par%  $a strut is a rule with no width and a fixed height, defined as \rule[-.3\baselineskip]{0pt}{\baselineskip}
+	{%
+		\ifx\insertframesubtitle\@empty%
+		\else%
+    	{\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\strut\insertframesubtitle\strut\par}%
+		\fi
+	}%
+	%\vskip-1ex% ??
+	%\if@tempswa\else\vskip-1ex\fi% set inside beamercolorbox... evil here... ??
+\end{beamercolorbox}%
+
+\begin{tikzpicture}[overlay]
+\draw[line width=2pt,draw=structure.fg,yshift=.5ex] (-\beamer@leftmargin,0) -- (\textwidth,0);
+\end{tikzpicture}
+}
+
+% ******************************************************
+% ******************************************************
+
+%\def\beamer@fteright{\vskip0.35cm\advance\leftskip by 1.7cm\advance\rightskip by1.7cm} ??
+
+% ******************
+% new commands
+% ******************
+\renewcommand{\maketitle}{%
+\begin{frame}[plain]
+\titlepage
+\end{frame}}
+
+\newcommand{\mail}[1]{\def\@mail{#1}}
+\mail{}
+\newcommand\datelecture{\@dblarg\beamer@datelecture}
+\long\def\beamer@datelecture[#1]#2#3#4{
+  \beamer@savemode
+  \mode<all>
+  \refstepcounter{lecture}\date{#2}
+  \def\beamer@currentlecturelabel{#4}
+  \@onelevel@sanitize\beamer@currentlecturelabel
+  \def\beamer@lecturename{#3}
+  \def\beamer@shortlecturename{#1}
+  \ifx\beamer@onlylecture\@empty
+  \else
+    \expandafter\beamer@if@in@clist@TF\expandafter\beamer@onlylecture
+      \expandafter{\beamer@currentlecturelabel}%
+      {\beamer@inlecturetrue}
+      {\beamer@inlecturefalse}
+  \fi
+  \beamer@atbeginlecture
+  \beamer@resumemode
+}
+
+\AtBeginLecture{%
+\begin{frame}[plain]
+\begin{center}
+	\begin{tcolorbox}[blanker,borderline horizontal={3pt}{20pt}{structure.fg}]
+	  \centering\color{structure.fg}\bfseries \lecturename~\thelecture.\quad \insertlecture\\
+	\end{tcolorbox}
+\end{center}
+\end{frame}
+}
+
+\mode
+<all>
+
+\endinput
+%%
+%% End of file `beamerthemeVerona.sty'.
+
+
