@@ -6,7 +6,7 @@ Designed from scientists for scientists, every design choice can be easily under
 
 Find out more in the detailed example.
 
-Based on the beamer theme "Verona", itsuses the awesome "Fira" font family (used by Firefox too).
+Based on the beamer theme "Verona", it uses the awesome "Fira" font family (used by Firefox too).
 Due to the font family used, it **does not compile under pdfLaTeX**.
 It compiles under **LuaLaTeX only**. This makes no practical difference to my experience.
 To compile with LuaLaTeX, just change the compiler of the editor you are using.
