@@ -25,7 +25,7 @@ Change the compiler to LuaLaTeX.
 Compile and enjoy.
 
 ## Examples
-- MWE: minimal example that compiles and nothing much more
+- MWE: minimal working example that compiles and nothing much more
 - MIexample: my example, a structured and detail walk-trhough in the ideas of this theme.
 
 
