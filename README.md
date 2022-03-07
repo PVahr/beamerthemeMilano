@@ -1,5 +1,4 @@
-# beamerthemeMilano
-Milano, an effective and modern beamer theme designed to deliver outstanding (scientific) talks.
+# Milano, an effective and modern beamer theme designed to deliver outstanding (scientific) talks.
 Heavily insipired by the great material provided by Jean-luc Doumont, that you can find at [https://principiae.be](https://principiae.be/X0303.php), including his awesome book "Tree, maps, theorem".
 
 Based on the beamer theme "Verona", its uses the awesome "Fira" font family (used by Firefox too).
