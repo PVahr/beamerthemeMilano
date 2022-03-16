@@ -31,7 +31,7 @@ To give some examples:
 
 ## Examples
 - MWE: minimal working example that compiles and nothing much more
-- MIexample: my example, a structured and detail walk-trhough in the ideas of this theme.
+- MI_example: my example, a structured and detail walk-trhough in the ideas of this theme.
 
 
 # WORK IN PROGRESS, PASS BY AT THE END OF THE SEMESTER
