@@ -20,7 +20,7 @@ Compile and enjoy.
 
 ### Options
 Just kidding, there are none. But wait, it's for intelligent reasons.
-Unless you spent hundreds of hours studiyng how to give a good talk (from the material of Jean-luc Doumont, for example), you do not know what makes a set of slides much better or much worse. So just trust me (and the ideas of Jean-luc Doumont more) and use these theme straight out of the box, it's already pretty close to the Nirvana of talks.
+Unless you spent hundreds of hours studiyng how to give a good talk (from the material of Jean-luc Doumont, for example), you do not know what makes a set of slides much better or much worse. So just trust me (and the ideas of Jean-luc Doumont more) and use these theme straight out of the box, it's already pretty close to the platonic idea of talks.
 
 To give some examples:
 - do you want to add your name, date and location to every slide? No way you can do it here! Why? Because that is just *graphical noise* that row against the aim of delivering your messages. These information goes at the beggining and at the end of the talk, which is where people will wonder who you are and what day is it. 
