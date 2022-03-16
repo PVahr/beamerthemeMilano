@@ -27,7 +27,7 @@ To give some examples:
 - do you want a side panel showing the progress and structure of your talk? Go back to hell! No way you can do it with this theme. That's, again, just *graphical noise* that decrease the Signal-to-Noise (SNR) ratio of your slides. It distracts people, letting them wander how many slides are still missing.
 - But can I have an option to add the slide number? No, you can't. Again, this is another example of graphical noise that reduces the SNR of your talk. Even worse if you'd also put something like 14/52. Then people will stare at it in dispair.
 - Can I change the color scheme? Well, if your really want to, yes sure. Just dig into the .sty file and found the part where the colors are defined, and change their RGB triplet till it fits your ugly taste. 
-
+- the title is too big and the space left is too little, can I make it smaller? Of course not: the title conveys the message of that slide. Fullstop. Sum up the slide in one sentence, put it into the title and let it be big. Instead titles whose Shannon entropy is 0 drops the SNR, delivering no information and forcing you to put much more text in the body of the slide. Like "Results", "Introduction", "Motivations" are not titles, they convey no information.
 
 ## Examples
 - MWE: minimal working example that compiles and nothing much more
