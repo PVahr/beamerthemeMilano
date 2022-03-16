@@ -19,8 +19,10 @@ Change the compiler to LuaLaTeX.
 Compile and enjoy.
 
 ### Options
-Just kidding, there are none. But for intelligent reasons.
+Just kidding, there are none. But wait, it's for intelligent reasons.
+Unless you spent hundreds of hours studiyng how to give a good talk (from the material of Jean-luc Doumont, for example), you do not know what makes a set of slides much better or much worse. So just trust me (and the ideas of Jean-luc Doumont more) and use these theme straight out of the box, it's already pretty close to the Nirvana of talks.
 
+To give some examples:
 - do you want to add your name, date and location to every slide? No way you can do it here! Why? Because that is just *graphical noise* that row against the aim of delivering your messages. These information goes at the beggining and at the end of the talk, which is where people will wonder who you are and what day is it. 
 - do you want a side panel showing the progress and structure of your talk? Go back to hell! No way you can do it with this theme. That's, again, just *graphical noise* that decrease the Signal-to-Noise (SNR) ratio of your slides. It distracts people, letting them wander how many slides are still missing.
 - But can I have an option to add the slide number? No, you can't. Again, this is another example of graphical noise that reduces the SNR of your talk. Even worse if you'd also put something like 14/52. Then people will stare at it in dispair.
