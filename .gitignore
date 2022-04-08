@@ -15,4 +15,4 @@
 *.ps
 *-converted-to.*
 
-!./MWE/img/univ_logo.pdf
+!/MWE/img/univ_logo.pdf
