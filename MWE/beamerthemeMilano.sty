@@ -27,36 +27,39 @@
 % colortheme -- all colors are defined here as RGB triplets (/256)
 % ******************
 \definecolor{lightorange}{RGB}{238,118,0} %a different orange
-\definecolor{Milanogreen}    {RGB}{0,152,0}
-\definecolor{Milanoblue}     {RGB}{0,51,102}
-\definecolor{Milanoorange}   {RGB}{238,118,0}
-\definecolor{Milanored}      {RGB}{246,29,29}
-\definecolor{Milanogray}     {RGB}{97,97,102} % reference gray
-\definecolor{Milanograyblue} {RGB}{0,128,128}
-\definecolor{Milanograygreen}{RGB}{128,128,0}
-\definecolor{MilanoProBackground}{RGB}{250,250,250}
-\definecolor{MilanoProBackground}{RGB}{240,240,240}
+\definecolor{MIgreen}    {RGB}{0,152,0}
+\definecolor{MIblue}     {RGB}{0,51,102}
+\definecolor{MIorange}   {RGB}{238,118,0}
+\definecolor{MIred}      {RGB}{246,29,29}
+\definecolor{MIgray}     {RGB}{97,97,102} % reference gray
+\definecolor{MIgrayblue} {RGB}{0,128,128}
+\definecolor{MIgraygreen}{RGB}{128,128,0}
+\definecolor{MIproBackground}{RGB}{250,250,250}
+\definecolor{MIproBackground}{RGB}{240,240,240}
 
-\setbeamercolor{frametitle}{Milanogray}
-\setbeamercolor{framesubtitle}{fg=Milanogray!50!white} % trick to make it lighter
+\setbeamercolor{frametitle}{fg=MIgray}
+\setbeamercolor{framesubtitle}{fg=MIgray!50!white} % trick to make it lighter
 
-\setbeamercolor{alerted text}{fg=Milanoorange}
-\setbeamercolor{example text}{fg=Milanogreen}
-\setbeamercolor{structure}{fg=Milanoorange}
+\setbeamercolor{alerted text}{fg=MIorange}
+\setbeamercolor{example text}{fg=MIgreen}
+\setbeamercolor{structure}{fg=MIorange}
 
 
-\setbeamercolor*{author in head/foot}{fg=Milanogray,bg=}
-\setbeamercolor*{title in head/foot}{fg=Milanogray,bg=}
-\setbeamercolor*{date in head/foot}{fg=Milanogray!80,bg=}
-\setbeamercolor*{section in head/foot}{fg=Milanogray!80,bg=}
-\setbeamercolor*{subsection in head/foot}{fg=Milanogray!80,bg=}
-\setbeamercolor*{subtitle}{fg=white}
-\setbeamercolor*{title}{fg=white,bg=Milanogray!75}
-\setbeamercolor*{author}{fg=Milanogray!80!black}
-\setbeamercolor*{date}{fg=Milanogray!80!white}
+\setbeamercolor*{author in head/foot}{fg=MIgray,bg=}
+\setbeamercolor*{title in head/foot}{fg=MIgray,bg=}
+\setbeamercolor*{date in head/foot}{fg=MIgray,bg=}
+\setbeamercolor*{section in head/foot}{fg=MIgray!80,bg=}
+\setbeamercolor*{subsection in head/foot}{fg=MIgray!80,bg=}
 
-\setbeamercolor*{page number in head/foot}{fg=Milanored!80!black}
-\setbeamercolor{background canvas}{bg=MilanoProBackground}
+% presentation title and subtitle here
+\setbeamercolor*{title}{fg=white, bg=MIgray}
+\setbeamercolor*{subtitle}{fg=white, bg=MIgray}
+\setbeamercolor*{author}{fg=black, bg=MIgray}
+\setbeamercolor*{date}{fg=MIgray}
+
+
+\setbeamercolor*{page number in head/foot}{fg=MIred!80!black}
+\setbeamercolor{background canvas}{bg=MIproBackground}
 % blocks
 %\setbeamercolor{block title}{use=structure,fg=structure.fg,bg=structure.fg!10!bg}
 %\setbeamercolor{block title alerted}{use=alerted text,fg=alerted text.fg,bg=alerted text.fg!10!bg}
@@ -74,13 +77,14 @@
 % These fonts works only with LauLaTeX or XeLaTeX, but they are very nice.
 % If you want to stick to pdflatex, add OT at the end of each font name, like BoldFont={Fira Sans OT}.
 % See the documentation of the metropolis package for more info (texdoc metropolis on terminal). 
-\setsansfont[ItalicFont={Fira Sans Light Italic},
-	BoldFont={Fira Sans},%
+\setsansfont[ItalicFont={Fira Sans Thin},
+	BoldFont={Fira Sans Regular},%
 	BoldItalicFont={Fira Sans Italic}]%
  	{Fira Sans Light}
 \setmonofont[BoldFont={Fira Mono Medium}]{Fira Mono}
 
-\setbeamerfont{frametitle}{size=\Large,series=\bfseries} %Title and subtitles of frames
+
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries} 			%Presentation title font size and type
 \setbeamerfont{framesubtitle}{size=\large, series=\mdseries}
 % \setbeamerfont{page number in head/foot}{size=\scriptsize, series=\mdseries} %footnote number
 \setbeamerfont{normal text}{size=\normalsize}
@@ -107,10 +111,6 @@
 % ******************************************************
 \setbeamertemplate{navigation symbols}{} %remove those ugly navigation symbols. Who ever used them?!
 
-\def\structureA{structure.fg!70} %% ???
-\def\structureB{structure.fg}
-
-
 % ??
 \let\oldtitlegraphic\titlegraphic
 \renewcommand{\titlegraphic}[3][]{%
@@ -121,49 +121,7 @@
 % ******************
 % footline
 % ******************
-\def\lectureinfoot{%
-    \ifnum\thelecture=0\else
-    %\textcolor{structure.fg}{$\cdot$\thelecture$\cdot$}
-    \tikz[overlay]\node[yshift=2pt,text=structure.fg] 
-      {\bf$\cdot$\thelecture$\cdot$};
-   \fi}
-
-%\setbeamertemplate{footline}
-%{
- % \leavevmode%
-  %\hfill\hbox{%
-%  \begin{beamercolorbox}[wd=.3333333\paperwidth,ht=2.25ex,dp=1ex,left]{author in head/foot}%
-%    \usebeamerfont{author in head/foot}\hspace*{1ex}\insertshortauthor\expandafter\beamer@ifempty\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}
-%  \end{beamercolorbox}%
-%  \begin{beamercolorbox}[wd=.3333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
-%    \usebeamerfont{title in head/foot}\insertshorttitle
-%  \end{beamercolorbox}%
-%  \begin{beamercolorbox}[wd=.3333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
-%    \usebeamerfont{date in head/foot}
-%    \insertshortdate{}\hspace*{2em}
-% \lectureinfoot\quad\insertframenumber~\tikz[overlay]\draw[draw=\structureA] (0,-.5mm) -- (0,1.6mm);
-%	\begin{beamercolorbox}[]
-%		\inserttotalframenumber\hspace*{2mm} 
-%	\end{beamercolorbox}
-%}
-%  \end{beamercolorbox}}%
-%}
-
-
-%Note: footline is messed up when you run the .tex in draft mode. Why?
-%\setbeamertemplate{footline}{%
-%	%\insertsectionnavigationhorizontal{10ex}{}{}	%it's not too ugly, is a decent option  but still is just NOISE
-%	\begin{beamercolorbox}[wd=\paperwidth, dp=1ex, ht=2.5ex, sep=0.3\beamer@leftmargin, right]{footline}%
-%		\usebeamerfont{page number in head/foot}%
-%		\usebeamercolor[fg]{page number in head/foot}
-%		%		\usebeamertemplate*{frame footer}
-%%		\insertframenumber
-%		%		\usebeamertemplate*{frame numbering}
-%	\end{beamercolorbox}%
-%	\vspace{-0.09\beamer@leftmargin} %% incredibily ugly and dirty job, whose goal is to have the number equidistant from bottom and right margin
-%	
-%}
-
+% just kidding, there is none. Because there MUST be none.
 \setbeamertemplate{footline}{
 }
 
@@ -177,23 +135,22 @@
 \setbeamertemplate{title page}
 {
   \begingroup % it's a TeX's primitive. Like {, but more powerfull. 
-  \begin{tikzpicture}[overlay,remember picture]
-  \draw[fill=Milanogray,draw=none] (current page.north west) rectangle (\paperwidth,-.3cm);
-		\node[xshift=-5cm,yshift=-4.1cm] 
-		 	at (current page.south) (titlepage) {};
+  \begin{tikzpicture}[overlay, remember picture]
+  \draw[fill=MIgray, draw=none] (current page.north west) rectangle (\paperwidth,-.3cm); % gray top rectangle
+		\node[xshift=-5cm,yshift=-4.1cm, thick] at (current page.south) (titlepage) {};
+		\draw (0cm, 0mm) -- (30:2cm);
 %	  \inserttitlegraphic;
-		\node at (current page.north east) {\includegraphics[width=.3\columnwidth]{./img/l+2}};
-		\draw[line width=4mm,xshift=3pt,draw=structure.fg,yshift=-1mm] 
-		 	(0,0) -- (\paperwidth,0) {};
-\node[anchor=south west,align=left] at (0,.25) {% 
+		\node at (current page) {\includegraphics[width=.3\columnwidth]{./img/l+2}};
+		\draw[ line width=4mm, xshift=3pt, draw=structure.fg, yshift=-1mm] (0,0) -- (\paperwidth,0) {}; % orange horizontal line
+		\node[ anchor=south west, align=left] at (0,.25) {%  node for title and subtitle
 \parbox{12cm}{%     
-\usebeamerfont{title}\usebeamercolor{title}\bfseries \inserttitle\par%
+\usebeamerfont{title}\usebeamercolor[fg]{title}\bfseries \inserttitle\par%
       \ifx\insertsubtitle\@empty%
       \else\vskip.5ex%
         {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}
         \insertsubtitle\par}%
       \fi}};
-\node[anchor=north west,align=left] at (0,-.4) {%
+\node[anchor=north west,align=left] at (0,-.4) {% node for authors etc
 \parbox{0.35\textwidth}{
 	\vskip5pt
       {\usebeamerfont{author}\usebeamercolor[fg]{author}\bfseries \insertauthor}
@@ -220,6 +177,44 @@
   \endgroup
 }
 
+% ******************
+% title page WITHOUT TIKZ 
+% ******************
+\setbeamertemplate{title page}
+{
+	\textcolor{white}{bla}
+ % title and subtitle    
+ \usebeamerfont{title}\usebeamercolor[bg]{title}\bfseries \inserttitle\par%
+	\ifx\insertsubtitle\@empty 
+	\else\vskip.5ex%
+	{\usebeamerfont{subtitle}\usebeamercolor[bg]{subtitle}
+		\insertsubtitle\par}%
+	\fi
+
+% horizontal bar with tikz
+\begin{tikzpicture}[overlay] % overlay option findamental to get margins and stuff right
+	\draw[ fill=MIgray, draw=none] (-25pt, 0) -- (\paperwidth, 0) -- (\paperwidth, 3cm) -- (-25pt, 3cm) -- cycle ; % gray top rectangle
+	\draw[ line width=6pt, MIorange, yshift=+3pt] (0pt, 0pt) -- (\paperwidth - 25pt, 0);
+\end{tikzpicture}
+
+\begin{columns}[onlytextwidth, t]
+\column{0.5\textwidth} % column for authior, date, place, logo
+	\vskip5pt
+	{\usebeamerfont{author}\usebeamercolor[fg]{author}\bfseries \insertauthor}
+	 \vskip6pt
+	{ \usebeamerfont{institute}\usebeamercolor[fg]{author}\insertinstitute } 
+	\vskip 10pt
+	{ \usebeamercolor[fg]{date} \usebeamerfont{date} \small \insertdate }
+	\vfill
+		\includegraphics[width=120pt]{./img/univ_logo}
+
+\column{0.5\textwidth} % column for graphics
+\begin{center}
+\includegraphics[width=\columnwidth]{./img/l+_w_b.pdf}
+\end{center}
+
+\end{columns}
+}
 
 
 
@@ -307,8 +302,8 @@
 }
 
 % usefull V and X ticks, but they do not belong to the theme. Use them in the main .tex file
-% \newcommand{\success}{ \textcolor{Milanogreen}{\checkmark} }
-% \newcommand{\fail}{ \textcolor{Milanored}{\ding{55}~~}}
+% \newcommand{\success}{ \textcolor{MIgreen}{\checkmark} }
+% \newcommand{\fail}{ \textcolor{MIred}{\ding{55}~~}}
 
 
 \mode  % don't delete

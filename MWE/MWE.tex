@@ -7,8 +7,12 @@
 
 
 
-
 \title{Group Seminar\\ \& yearly review}
+\title{Hybrid trap report \\ 4$^{\text{th}}$ semester}
+
+\subtitle{arXiv 2022:1024334}
+\subtitle{}
+
 \author{Paolino Paperino}
 \institute
 {Group of {\bfseries Donald Duck}, \\ University of Paperopoli
@@ -16,7 +20,10 @@
 \date{May 2021}
 \titlegraphic[height=0.4\textheight]{./img/l+2}{}
 
+
+
 \begin{document}
+
 
 \maketitle 
 \begin{frame}{Milano this is an effective,\\modern and simple\ theme}{sub}
@@ -25,15 +32,57 @@
 	blalbla
 \end{block}
 \end{frame}
+ 
+
+
+\begin{frame}[plain, t]
+\begin{columns}[onlytextwidth]
+\column{.4\textwidth} % column for logo and other group members
+
+\vspace{40pt}
+
+\usebeamerfont{author}\usebeamercolor[fg]{author} \insertauthor\par \vspace{20pt}
+\vfill
+\usebeamerfont{institute}\usebeamercolor[fg]{institute}\insertinstitute \par \vspace{3pt}
+\usebeamerfont{date}\usebeamercolor[fg]{date} \insertdate\par \vspace{20pt}
+\includegraphics[width=120pt]{./img/univ_logo}
+\vfill
+
+\column{.6\textwidth} % column for title, subtitle, affiliation
+	\raggedleft
+\vspace{40pt}
+
+{\usebeamerfont{frametitle} \usebeamercolor[fg]{frametitle} \inserttitle}\par
+\vfill 
+{\usebeamerfont{subtitle} \usebeamercolor[bg]{subtitle} \insertsubtitle}\par
+\end{columns}
+\end{frame}
+
 
 
 
 \begin{frame}[plain]
-	\raggedleft
-	{\usebeamerfont{frametitle} \usebeamercolor[]{frametitle} \inserttitle}
+\begin{tikzpicture}[overlay,remember picture]
+	\fill (canvas cs:x=1cm,y=1.5cm) circle (2pt);
+	\fill (canvas cs:x=0cm,y=0cm) circle (2pt);
 	
+\node[anchor=north west, align=right] at (3, 3) { % node for title and subtitle
+\parbox{.4\textwidth}{
+\raggedleft
+{\usebeamerfont{frametitle} \usebeamercolor[fg]{frametitle} \inserttitle}\par
 
+\vfill 
+{\usebeamerfont{subtitle} \usebeamercolor[bg]{subtitle} \insertsubtitle}\par
+}};
+\node[anchor=south west, align=right] at (0, -4) { % node for author, institution, date and logo(s)
+	\parbox{.4\textwidth}{
+\usebeamerfont{author}\usebeamercolor[fg]{author} \insertauthor\par \vspace{5pt}
+\usebeamerfont{institute}\usebeamercolor[bg]{institute}\insertinstitute \par \vspace{3pt}
+\usebeamerfont{date}\usebeamercolor[fg]{date} \insertdate\par \vspace{20pt}	
+}};
+\end{tikzpicture}
 
 \end{frame}
+
 
 \end{document}
